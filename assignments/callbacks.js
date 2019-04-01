@@ -24,27 +24,83 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 */
 
-
+// function compute(param1, param2, callbackfunction) {
+//   return callbackfunction(param1,param2);
+// }
+//Question 1:
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
 
+console.log(items.length);
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Question 2:
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length-1]);
 }
+function lastItem(x){
+  return x;
+}
+console.log(last(items,lastItem));
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Question 3:
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+
+// ANSWER START HERE!
+return cb(x + y);
 }
 
+function ReturnNum(x){
+  return x;
+}
+console.log(sumNums(4,8,ReturnNum));
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Question 4:
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+
+// ANSWER START HERE!
+  return cb(x*y);
 }
 
+console.log(multiplyNums(3,5,ReturnNum))
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  const InList = list.includes(item);
+  cb(InList, item);
 }
+
+contains('yo-yo', items, function(InList, item){
+  if(InList) {
+    console.log(`Question 5 - ${item} was found in the list!`);
+  } else {
+    console.log(`Question 5 - ${item} was not found in the list :(`);
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
 
 /* STRETCH PROBLEM */
 
