@@ -1,5 +1,15 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function PassNote() {
+  const SenderMessage= 'You Owe Me Money'
+  console.log (`Hey did you get my notes?`);
+
+  function ReceievedNote() {
+    console.log( `No, I did not get it. What is the message? Message: "${SenderMessage}".`)
+  }
+  ReceievedNote()
+}
+PassNote()
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
